@@ -1,0 +1,382 @@
+/* =============================================
+   PRODUTO.CSS — Estilos de páginas de produto
+   ============================================= */
+
+/* ── Hero ──────────────────────────────────── */
+.produto-hero {
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    padding: 64px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pseudo-element for elegant grain or subtle texture overlay */
+.produto-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at bottom left, rgba(0, 198, 215, 0.12) 0%, transparent 50%);
+    z-index: 1;
+}
+
+/* Layout de duas colunas dentro do hero */
+.produto-hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 64px;
+    row-gap: 0;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb--light {
+    position: absolute;
+    top: -40px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.breadcrumb--light a,
+.breadcrumb--light .breadcrumb__sep,
+.breadcrumb--light .current {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.breadcrumb--light a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Breadcrumb invisível no grid flow (é absoluto no topo) */
+.produto-hero .breadcrumb {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.produto-hero__tag {
+    grid-column: 1;
+    grid-row: 2;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 40px;
+    margin: 0 0 20px;
+    width: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.produto-hero__title {
+    grid-column: 1;
+    grid-row: 3;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 0;
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.produto-hero__title span {
+    background: linear-gradient(135deg, var(--white), var(--cyan-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.produto-hero__desc {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 500px;
+    line-height: 1.75;
+    margin-bottom: 0;
+    align-self: center;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    padding-left: 24px;
+}
+
+.produto-hero__actions {
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding-left: 24px;
+}
+
+/* ── Destaques ─────────────────────────────── */
+.produto-destaques {
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 32px 0;
+}
+
+.destaques-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.destaque-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    padding: 20px 16px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.destaque-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.destaque-icon {
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.destaque-item strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+}
+
+.destaque-item span {
+    font-size: 0.78rem;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
+/* ── Conteúdo principal ────────────────────── */
+.produto-main {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.produto-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.produto-info p {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.produto-aplicacoes {
+    margin-top: 28px;
+}
+
+.produto-aplicacoes h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 14px;
+}
+
+.aplicacoes-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.aplicacoes-list li {
+    font-size: 0.88rem;
+    color: var(--gray-600);
+    padding: 8px 12px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+/* ── Imagem e specs ────────────────────────── */
+.produto-img-wrap {
+    background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    margin-bottom: 24px;
+    min-height: 260px;
+}
+
+.produto-img-wrap img {
+    max-height: 220px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s ease;
+}
+
+.produto-img-wrap:hover img {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.specs-card {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 28px;
+}
+
+.specs-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 16px;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.specs-table tr {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.specs-table tr:last-child {
+    border-bottom: none;
+}
+
+.specs-table th {
+    padding: 10px 0;
+    color: var(--gray-600);
+    font-weight: 600;
+    text-align: left;
+    width: 40%;
+}
+
+.specs-table td {
+    padding: 10px 0;
+    color: var(--blue-dark);
+    font-weight: 500;
+}
+
+/* ── CTA ───────────────────────────────────── */
+.produto-cta {
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+    padding: 72px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.produto-cta h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.produto-cta p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 900px) {
+    .produto-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .destaques-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .aplicacoes-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .destaques-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .breadcrumb--light {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        margin-bottom: 24px;
+        background: transparent;
+        padding: 0;
+        border: none;
+    }
+
+    .produto-hero {
+        padding: 56px 0 48px;
+        min-height: auto;
+    }
+
+    /* Mobile: volta para layout de coluna única */
+    .produto-hero .container {
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+    }
+
+    .produto-hero__tag,
+    .produto-hero__title {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .produto-hero__desc {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 16px;
+        padding-left: 0;
+        border-left: none;
+        font-size: 1rem;
+    }
+
+    .produto-hero__actions {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 16px;
+        padding-left: 0;
+    }
+}

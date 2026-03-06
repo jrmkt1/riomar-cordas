@@ -1,0 +1,15 @@
+const dropdownItems = [
+  { href: 'expositores.html', label: 'Expositores', img: null },
+  { href: 'produto-tropical.html', label: 'Tropical', img: 'images/menu-thumbs/thumb-tropical.jpg' },
+  { href: 'produto-meadas.html', label: 'Meadas', img: 'images/menu-thumbs/thumb-meadas.jpg' },
+  { href: 'produto-torcida-branca.html', label: 'Torcida Branca', img: null },
+  { href: 'produto-pe-azul.html', label: 'PE Azul', img: null },
+  { href: 'produto-pp-sinalizacao.html', label: 'PP Sinalização', img: 'images/menu-thumbs/thumb-pp-sinaliza--o.jpg' },
+  { href: 'produto-trancada.html', label: 'Trançada', img: 'images/menu-thumbs/thumb-tran-ada.jpg' },
+  { href: 'produto-trancada-branca.html', label: 'Trançada Branca', img: 'images/menu-thumbs/thumb-tran-ada-branca.jpg' },
+  { href: 'produto-trancada-carga.html', label: 'Trançada Carga', img: 'images/menu-thumbs/thumb-tran-ada-carga.jpg' },
+  { href: 'produto-trancada-chata.html', label: 'Trançada Chata', img: 'images/menu-thumbs/thumb-tran-ada-chata.jpg' },
+  { href: 'produto-trancada-per.html', label: 'Trançada PER', img: 'images/menu-thumbs/thumb-tran-ada-per.jpg' },
+  { href: 'produto-trancada-pet.html', label: 'Trançada PET', img: null },
+  { href: 'distribuicao.html', label: 'Distribuição', img: null },
+];

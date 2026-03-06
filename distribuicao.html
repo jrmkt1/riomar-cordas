@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribuição – Riomar Cordas</title>
+    <meta name="description"
+        content="Linha completa para Distribuição da Riomar: Carro de Mão, Cinta Catraca, Lonas, Fitilho e mais." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pages.css" />
+    <link rel="stylesheet" href="produto.css" />
+    <link rel="stylesheet" href="cotacao.css" />
+    <script src="components.js"></script>
+    <script src="cotacao.js"></script>
+    <style>
+        .dist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .dist-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(26, 58, 107, 0.08);
+            border-color: rgba(26, 58, 107, 0.2);
+        }
+
+        .dist-card__icon-wrap {
+            height: 200px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .dist-card__icon {
+            font-size: 4rem;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.05));
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dist-card:hover .dist-card__icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .dist-card__body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dist-card__title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .dist-card__desc {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .dist-card__badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--white);
+            color: var(--blue-main);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dist-card__action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            margin-top: auto;
+        }
+
+        .dist-card__action svg {
+            transition: transform 0.2s;
+        }
+
+        .dist-card:hover .dist-card__action {
+            color: var(--green-eco);
+        }
+
+        .dist-card:hover .dist-card__action svg {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .dist-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="page-banner">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__sep">›</span>
+                <a href="produtos.html">Produtos</a>
+                <span class="breadcrumb__sep">›</span>
+                <span class="current">Distribuição</span>
+            </div>
+            <div class="page-banner__tag">Linha Completa</div>
+            <h1 class="page-banner__title">Distribuição</h1>
+            <p class="page-banner__desc">Conheça nossa linha completa de produtos voltados para o setor de distribuição.
+                Equipamentos, suprimentos e acessórios desenvolvidos com a mais alta qualidade.</p>
+        </div>
+    </section>
+
+    <!-- NAV PRODUTOS RÁPIDO (Opcional, mas mantém consistência com produtos.html) -->
+    <nav class="products__tabs" id="quick-nav"
+        style="padding:24px;background:var(--white);border-bottom:1px solid var(--gray-200);position:sticky;top:114px;z-index:100;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;">
+        <a href="expositores.html" class="products__tab">Expositores</a>
+        <a href="produto-tropical.html" class="products__tab">Tropical</a>
+        <a href="produto-meadas.html" class="products__tab">Meadas</a>
+        <a href="produto-torcida-branca.html" class="products__tab">Torcida Branca</a>
+        <a href="produto-pe-azul.html" class="products__tab">PE Azul</a>
+        <a href="produto-pp-sinalizacao.html" class="products__tab">PP Sinalização</a>
+        <a href="produto-trancada.html" class="products__tab">Trançada</a>
+        <a href="produto-trancada-branca.html" class="products__tab">Trançada Branca</a>
+        <a href="produto-trancada-carga.html" class="products__tab">Trançada Carga</a>
+        <a href="produto-trancada-chata.html" class="products__tab">Trançada Chata</a>
+        <a href="produto-trancada-per.html" class="products__tab">Trançada PER</a>
+        <a href="produto-trancada-pet.html" class="products__tab">Trançada PET</a>
+        <a href="distribuicao.html" class="products__tab active">Distribuição</a>
+    </nav>
+
+    <main class="distribuicao-page" style="background-color: #fafbfc; padding-top: 40px; padding-bottom: 80px;">
+        <div class="container animate-on-scroll">
+            <div class="section-header"
+                style="margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <span class="section-tag" style="background: rgba(39, 174, 96, 0.1); color: var(--green-eco);">Catálogo
+                    de</span>
+                <h2 class="section-title">PRODUTOS DE DISTRIBUIÇÃO</h2>
+                <div class="section-divider"></div>
+                <p style="margin-top: 16px; color: var(--gray-500); font-size: 1.1rem; max-width: 700px;">
+                    Exibindo todos 10 resultados para o segmento de distribuição. Encontre lonas, carrinhos, fitilho e
+                    cordas essenciais.
+                </p>
+            </div>
+
+            <div class="dist-grid">
+
+                <!-- 1 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge">Industrial</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/09/carro-mão.jpg" alt="CARRO DE MÃO" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">CARRO DE MÃO</h3>
+                        <p class="dist-card__desc">Ideal para transporte de cargas moderadas e pesadas em áreas
+                            industriais e construção.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge">Segurança</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/09/cinta_catraca.jpg" alt="CINTA CATRACA" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">CINTA CATRACA</h3>
+                        <p class="dist-card__desc">Utilizada para amarração segura de cargas em caminhões e transporte
+                            rodoviário.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="dist-card" onclick="window.location.href='produtos.html#k2'">
+                    <span class="dist-card__badge">NR18</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/09/k2.jpg" alt="Corda K2" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">Corda K2</h3>
+                        <p class="dist-card__desc">Corda técnica desenvolvida para esportes verticais, rapel e sistema
+                            de trava-quedas.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="dist-card" onclick="window.location.href='produtos.html#pa'">
+                    <span class="dist-card__badge">Resistente</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/09/corda-poliamaida.jpg" alt="Corda Poliamida" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">Corda Poliamida</h3>
+                        <p class="dist-card__desc">Material super resistente (Nylon Seda) voltado para segurança e áreas
+                            da construção civil.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge">Lona</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/09/filme.jpg" alt="FILME AGRÍCOLA (Lona Preta)" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">FILME AGRÍCOLA (Lona Preta)</h3>
+                        <p class="dist-card__desc">Isolamento e proteção para silagem, obras, plantações e coberturas
+                            diversas.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge">Lona</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/10/lona_agricola.jpg" alt="Filme Agrícola Preto com Branco" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">Filme Agrícola Preto com Branco</h3>
+                        <p class="dist-card__desc">Especial para estufas e silagem; garante bloqueio da luz e excelente
+                            conservação por ter faces mistas.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge">Embalagem</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/10/fitilho_cores-1.jpg" alt="Filme Polietileno Cores" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">Filme Polietileno Cores</h3>
+                        <p class="dist-card__desc">Versatilidade na proteção de mercadorias. Bobinas coloridas para
+                            categorização e cobertura.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge">Jardinagem</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/10/fio_nylon.jpg" alt="Fio de Nylon" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">Fio de Nylon para Roçadeira</h3>
+                        <p class="dist-card__desc">Fio de alta resistência voltado para manutenção de jardins e cortes
+                            de grama rigorosos.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge eco">Ecológico</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/10/fitilho_reciclado.jpg" alt="Fitilho Reciclado" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">Fitilho Reciclado</h3>
+                        <p class="dist-card__desc">Produto sustentável utilizado para amarração de caixas, pacotes e
+                            fardos no dia a dia.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="dist-card" onclick="alert('Funcionalidade de detalhe do produto em desenvolvimento.')">
+                    <span class="dist-card__badge">Multiuso</span>
+                    <div class="dist-card__icon-wrap">
+                        <img class="dist-card__img" src="https://www.riomarcordas.com.br/wp-content/uploads/2019/12/lona_azul.jpg" alt="Lona Multiuso Azul" />
+                    </div>
+                    <div class="dist-card__body">
+                        <h3 class="dist-card__title">Lona Multiuso Azul</h3>
+                        <p class="dist-card__desc">Lona leve, super resistente e impermeável, perfeita para barracas de
+                            feira, telhados e proteção de chuvas.</p>
+                        <div class="dist-card__action">Ver detalhes <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA -->
+    <section class="cta-contact" style="padding:80px 0;">
+        <div class="cta-contact__bg"></div>
+        <div class="container" style="position:relative;z-index:2;text-align:center;">
+            <p class="cta-contact__pre">Ficou com alguma dúvida?</p>
+            <h2 class="cta-contact__title" style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:32px;">FAÇA AGORA SEU
+                ORÇAMENTO</h2>
+            <a href="cotacao.html" class="btn btn--primary" style="font-size:1rem;padding:16px 40px;">Solicitar
+                Orçamento</a>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

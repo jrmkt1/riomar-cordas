@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Riomar</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --blue-dark: #002244;
+            --blue-mid: #2557a7;
+            --blue-light: #24a9e1;
+            --white: #ffffff;
+            --gray-100: #f4f6f9;
+            --gray-200: #e2e8f0;
+            --gray-600: #64748b;
+            --red: #e74c3c;
+            --green: #2ecc71;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gray-100);
+            color: #333;
+        }
+
+        /* Login Screen */
+        #login-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: var(--blue-dark);
+        }
+
+        .login-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--blue-dark);
+            margin-bottom: 24px;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--gray-600);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .btn {
+            background: var(--blue-mid);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--blue-dark);
+        }
+
+        .btn.danger {
+            background: var(--red);
+        }
+
+        .btn.danger:hover {
+            background: #c0392b;
+        }
+
+        /* Dashboard */
+        #dashboard {
+            display: none;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            background: var(--blue-dark);
+            padding: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar h1 {
+            font-family: 'Outfit';
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: var(--white);
+            border-bottom: 2px solid var(--blue-light);
+            padding-bottom: 4px;
+        }
+
+        .logout {
+            color: #ff7675;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section {
+            display: none;
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Tables & Lists */
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .header-actions h2 {
+            font-family: 'Outfit';
+            font-weight: 800;
+            color: var(--blue-dark);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.9rem;
+        }
+
+        table th,
+        table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        table th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .badge.pendente {
+            background: #ffeaa7;
+            color: #d35400;
+        }
+
+        .badge.atendido {
+            background: #55efc4;
+            color: #27ae60;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .modal h3 {
+            margin-bottom: 20px;
+            font-family: 'Outfit';
+            color: var(--blue-dark);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login -->
+    <div id="login-screen">
+        <div class="login-box">
+            <h2>Painel Admin</h2>
+            <form id="form-login" onsubmit="event.preventDefault(); login();">
+                <div class="form-group">
+                    <label>Usuário</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <p id="login-error" style="color:var(--red); font-size: 0.85rem; margin-top: 12px; display: none;">
+                Credenciais inválidas.</p>
+        </div>
+    </div>
+
+    <!-- Interface -->
+    <div id="dashboard">
+        <div class="sidebar">
+            <h1><img src="images/logo.png" alt="Riomar Cordas"
+                    style="height:36px;width:auto;vertical-align:middle;filter:brightness(0) invert(1);"> <span
+                    style="font-size:0.75rem;font-weight:600;opacity:0.7;letter-spacing:2px;">ADMIN</span></h1>
+            <div class="nav-links">
+                <a class="active" onclick="switchTab('orcamentos', this)">Orçamentos</a>
+                <a onclick="switchTab('representantes', this)">Representantes</a>
+                <a onclick="switchTab('produtos', this)">Produtos</a>
+            </div>
+            <div class="logout" onclick="logout()">Sair</div>
+        </div>
+
+        <div class="content">
+
+            <!-- Orçamentos -->
+            <div id="orcamentos" class="section active">
+                <div class="header-actions">
+                    <h2>Solicitações de Orçamentos</h2>
+                    <button class="btn" style="width:auto;" onclick="loadQuotes()">⟳ Atualizar</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Cliente</th>
+                                <th>Contato</th>
+                                <th>Status</th>
+                                <th>Itens</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quotes-tbl"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Representantes -->
+            <div id="representantes" class="section">
+                <div class="header-actions">
+                    <h2>Representantes Cadastrados</h2>
+                    <button class="btn" style="width:auto;" onclick="openModal('rep-modal')">+ Novo
+                        Representante</button>
+                </div>
+                <table style="margin-top:0;">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Região</th>
+                            <th>Estados Atendidos</th>
+                            <th>WhatsApp / Fone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reps-tbl"></tbody>
+                </table>
+            </div>
+
+            <!-- Produtos -->
+            <div id="produtos" class="section">
+                <div class="header-actions">
+                    <h2>Produtos Cadastrados</h2>
+                    <button class="btn" style="width:auto;" onclick="newProduct()">+ Novo Produto</button>
+                </div>
+                <table style="margin-top:0;">
+                    <thead>
+                        <tr>
+                            <th>Imagem</th>
+                            <th>Título</th>
+                            <th>Tag / Categoria</th>
+                            <th>Descrição</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-tbl"></tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="rep-modal" onclick="if(event.target===this) this.classList.remove('active')">
+        <div class="modal">
+            <h3>Novo Representante</h3>
+            <form onsubmit="event.preventDefault(); saveRep();">
+                <div class="form-group">
+                    <label>Nome Completo / Empresa</label>
+                    <input type="text" id="rep-name" required>
+                </div>
+                <div style="display:flex; gap:16px;">
+                    <div class="form-group" style="flex:1;">
+                        <label>Região (Ex: Sul)</label>
+                        <input type="text" id="rep-region" required>
+                    </div>
+                    <div class="form-group" style="flex:1;">
+                        <label>Estados (Ex: SP, RJ)</label>
+                        <input type="text" id="rep-states" required placeholder="Siglas separadas por vírgula">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp / Telefone Principal</label>
+                    <input type="text" id="rep-zap" required>
+                </div>
+                <button type="submit" class="btn">Salvar Representante</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="product-modal" onclick="if(event.target===this) this.classList.remove('active')">
+        <div class="modal">
+            <h3 id="product-modal-title">Novo Produto</h3>
+            <form onsubmit="event.preventDefault(); saveProduct();" id="form-product">
+                <div class="form-group">
+                    <label>Título do Produto</label>
+                    <input type="text" id="prod-title" required placeholder="Ex: Corda Tropical">
+                </div>
+                <div style="display:flex; gap:16px;">
+                    <div class="form-group" style="flex:1;">
+                        <label>Tag / Categoria</label>
+                        <input type="text" id="prod-tag" placeholder="Ex: Polipropileno">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea id="prod-desc" rows="3"
+                        style="width:100%; padding:12px; border:1px solid var(--gray-200); border-radius:6px; font-family:inherit;"></textarea>
+                </div>
+                <!-- NOVOS CAMPOS ESPECÍFICOS -->
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <div class="form-group" style="flex:1; min-width: 150px;">
+                        <label>Bitolas Disponíveis</label>
+                        <input type="text" id="prod-bitolas" placeholder="Ex: 03mm, 04mm, 05mm...">
+                    </div>
+                    <div class="form-group" style="flex:1; min-width: 150px;">
+                        <label>Cores Disponíveis</label>
+                        <input type="text" id="prod-cores" placeholder="Ex: Amarela, Azul, Branca...">
+                    </div>
+                </div>
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <div class="form-group" style="flex:1; min-width: 150px;">
+                        <label>Metragens</label>
+                        <input type="text" id="prod-metragens" placeholder="Ex: 50m, 100m, 200m...">
+                    </div>
+                    <div class="form-group" style="flex:1; min-width: 150px;">
+                        <label>Carga de Ruptura</label>
+                        <input type="text" id="prod-cargas_ruptura" placeholder="Ex: 126,63 N...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Imagem da Corda</label>
+                    <input type="file" id="prod-image" accept="image/*">
+                    <small id="prod-image-helper"
+                        style="color:var(--gray-600);font-size:0.75rem;display:none;margin-top:4px;">Deixe vazio para
+                        manter a imagem atual.</small>
+                </div>
+                <button type="submit" class="btn" id="btn-save-product">Salvar Produto</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Orçamento Details Modal -->
+    <div class="modal-overlay" id="quote-detail-modal"
+        onclick="if(event.target===this) this.classList.remove('active')">
+        <div class="modal" style="max-width: 600px;">
+            <h3>Detalhes do Orçamento</h3>
+            <div id="quote-detail-content" style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 24px;"></div>
+            <div style="display:flex; gap:16px;">
+                <button class="btn" style="background:#55efc4; color:#2d3436;" onclick="markQuoteAsDone()">Marcar como
+                    Atendido</button>
+                <button class="btn danger"
+                    onclick="document.getElementById('quote-detail-modal').classList.remove('active')">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = '/api';
+        let currentQuoteId = null;
+        let editProductId = null;
+
+        // AUTH Logic
+        const token = localStorage.getItem('riomar_token');
+        if (token) {
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'flex';
+            loadData();
+        }
+
+        async function login() {
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            try {
+                const res = await fetch(`${API_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: u, password: p })
+                });
+                const data = await res.json();
+                if (data.token) {
+                    localStorage.setItem('riomar_token', data.token);
+                    document.getElementById('login-error').style.display = 'none';
+                    document.getElementById('login-screen').style.display = 'none';
+                    document.getElementById('dashboard').style.display = 'flex';
+                    loadData();
+                } else {
+                    document.getElementById('login-error').style.display = 'block';
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('riomar_token');
+            window.location.reload();
+        }
+
+        // TABS
+        function switchTab(tabId, el) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+
+        // Fetch Utilities
+        async function fetchAPI(endpoint, method = 'GET', body = null) {
+            const tk = localStorage.getItem('riomar_token');
+            const options = { method, headers: { 'Authorization': `Bearer ${tk}` } };
+            if (body) {
+                options.headers['Content-Type'] = 'application/json';
+                options.body = JSON.stringify(body);
+            }
+            const res = await fetch(API_URL + endpoint, options);
+            if (res.status === 401 || res.status === 403) logout();
+            return res.json();
+        }
+
+        // --- DATA LOADERS ---
+        function loadData() {
+            loadQuotes();
+            loadReps();
+            loadProducts();
+        }
+
+        // Orçamentos
+        async function loadQuotes() {
+            const data = await fetchAPI('/quotes');
+            const tbody = document.getElementById('quotes-tbl');
+            tbody.innerHTML = '';
+
+            data.forEach(q => {
+                const date = new Date(q.created_at).toLocaleDateString();
+                let itemsCount = 0;
+                try {
+                    let jsonRaw = q.items_json;
+                    if (jsonRaw.includes(' | Extras: ')) {
+                        jsonRaw = jsonRaw.split(' | Extras: ')[0];
+                    }
+                    itemsCount = JSON.parse(jsonRaw).length;
+                } catch (err) {
+                    console.error('Error parsing quote', err);
+                }
+                const badgeClass = q.status === 'Pendente' ? 'pendente' : 'atendido';
+
+                tbody.innerHTML += `
+                    <tr>
+                        <td style="color:var(--gray-600);">${date}</td>
+                        <td><strong>${q.customer_name}</strong></td>
+                        <td>${q.customer_whatsapp}</td>
+                        <td><span class="badge ${badgeClass}">${q.status}</span></td>
+                        <td>${itemsCount} Produtos</td>
+                        <td><button class="btn" style="padding:6px 12px; font-size:0.8rem; width:auto;" onclick='viewQuote(${JSON.stringify(q).replace(/'/g, "&apos;")})'>Ver Detalhes</button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function viewQuote(quote) {
+            currentQuoteId = quote.id;
+            let items = [];
+            let extras = null;
+            try {
+                let jsonRaw = quote.items_json;
+                if (jsonRaw.includes(' | Extras: ')) {
+                    const parts = jsonRaw.split(' | Extras: ');
+                    jsonRaw = parts[0];
+                    extras = JSON.parse(parts[1]);
+                }
+                items = JSON.parse(jsonRaw);
+            } catch (err) { }
+
+            let html = `
+                <p><strong>Cliente:</strong> ${quote.customer_name}</p>
+                <p><strong>WhatsApp:</strong> ${quote.customer_whatsapp}</p>
+                <p><strong>E-mail:</strong> ${quote.customer_email || 'Não informado'}</p>
+            `;
+            if (extras) {
+                if (extras.empresa) html += `<p><strong>Empresa:</strong> ${extras.empresa}</p>`;
+                if (extras.estado || extras.cidade) html += `<p><strong>Local:</strong> ${extras.cidade || ''} - ${extras.estado || ''}</p>`;
+                if (extras.mensagem) html += `<p><strong>Observação do Cliente:</strong><br/>${extras.mensagem}</p>`;
+            }
+            html += `
+                <hr style="margin: 16px 0; border:none; border-top:1px solid #eee;">
+                <h4 style="margin-bottom:8px;">Itens Solicitados:</h4>
+                <ul style="padding-left: 20px;">
+            `;
+
+            items.forEach(i => {
+                const qty = i.quantity || i.qty || 1;
+                const name = i.nome || i.produto || i.name;
+                const dets = [];
+                if (i.bitola) dets.push(`Bitola: ${i.bitola}`);
+                if (i.cor) dets.push(`Cor: ${i.cor}`);
+                if (i.embalagem) dets.push(`Emb: ${i.embalagem}`);
+                if (i.obs) dets.push(`Obs: ${i.obs}`);
+                const detailsStr = dets.length ? dets.join(' | ') : (i.details || 'Sem detalhes');
+
+                html += `<li><strong>${qty}x</strong> ${name} <span style="color:#64748b; font-size:0.85rem;">(${detailsStr})</span></li>`;
+            });
+
+            html += `</ul>`;
+
+            document.getElementById('quote-detail-content').innerHTML = html;
+            openModal('quote-detail-modal');
+        }
+
+        async function markQuoteAsDone() {
+            if (!currentQuoteId) return;
+            await fetchAPI(`/quotes/${currentQuoteId}/status`, 'POST', { status: 'Atendido' });
+            document.getElementById('quote-detail-modal').classList.remove('active');
+            loadQuotes();
+        }
+
+        // Representantes
+        async function loadReps() {
+            const data = await fetchAPI('/representatives');
+            const tbody = document.getElementById('reps-tbl');
+            tbody.innerHTML = '';
+
+            data.forEach(r => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td><strong>${r.name}</strong></td>
+                        <td>${r.region}</td>
+                        <td style="text-transform:uppercase;">${r.states}</td>
+                        <td>${r.whatsapp}</td>
+                        <td><button class="btn danger" style="padding:6px 12px; font-size:0.8rem; width:auto;" onclick="deleteRep(${r.id})">Remover</button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        async function saveRep() {
+            const body = {
+                name: document.getElementById('rep-name').value,
+                region: document.getElementById('rep-region').value,
+                states: document.getElementById('rep-states').value,
+                whatsapp: document.getElementById('rep-zap').value
+            };
+            await fetchAPI('/representatives', 'POST', body);
+            document.getElementById('rep-modal').classList.remove('active');
+            document.querySelector('#rep-modal form').reset();
+            loadReps();
+        }
+
+        async function deleteRep(id) {
+            if (confirm('Certeza que deseja excluir este representante?')) {
+                await fetchAPI(`/representatives/${id}`, 'DELETE');
+                loadReps();
+            }
+        }
+
+        // --- Produtos ---
+        async function loadProducts() {
+            const data = await fetchAPI('/products');
+            const tbody = document.getElementById('products-tbl');
+            tbody.innerHTML = '';
+
+            data.forEach(p => {
+                const img = p.image_url ? `<img src="/${p.image_url}" style="height:40px; border-radius:4px; object-fit:cover;">` : 'Sem imagem';
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${img}</td>
+                        <td><strong>${p.title}</strong></td>
+                        <td>${p.tag || '-'}</td>
+                        <td style="max-width:200px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${p.description || '-'}</td>
+                        <td>
+                            <button class="btn" style="padding:6px 12px; font-size:0.8rem; width:auto; background:var(--blue-light);" onclick='editProduct(${JSON.stringify(p).replace(/'/g, "&apos;")})'>Editar</button>
+                            <button class="btn danger" style="padding:6px 12px; font-size:0.8rem; width:auto;" onclick="deleteProduct(${p.id})">Remover</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function newProduct() {
+            editProductId = null;
+            document.getElementById('form-product').reset();
+            document.getElementById('product-modal-title').textContent = "Novo Produto";
+            document.getElementById('prod-image').required = true;
+            document.getElementById('prod-image-helper').style.display = 'none';
+            document.getElementById('btn-save-product').textContent = "Salvar Produto";
+            openModal('product-modal');
+        }
+
+        function editProduct(p) {
+            editProductId = p.id;
+            document.getElementById('form-product').reset();
+            document.getElementById('product-modal-title').textContent = "Editar Produto";
+            document.getElementById('prod-title').value = p.title || '';
+            document.getElementById('prod-tag').value = p.tag || '';
+            document.getElementById('prod-desc').value = p.description || '';
+            document.getElementById('prod-bitolas').value = p.bitolas || '';
+            document.getElementById('prod-cores').value = p.cores || '';
+            document.getElementById('prod-metragens').value = p.metragens || '';
+            document.getElementById('prod-cargas_ruptura').value = p.cargas_ruptura || '';
+
+            document.getElementById('prod-image').required = false;
+            document.getElementById('prod-image-helper').style.display = 'block';
+            document.getElementById('btn-save-product').textContent = "Atualizar Produto";
+
+            openModal('product-modal');
+        }
+
+        async function saveProduct() {
+            const title = document.getElementById('prod-title').value;
+            const tag = document.getElementById('prod-tag').value;
+            const desc = document.getElementById('prod-desc').value;
+            const bitolas = document.getElementById('prod-bitolas').value;
+            const cores = document.getElementById('prod-cores').value;
+            const metragens = document.getElementById('prod-metragens').value;
+            const cargas_ruptura = document.getElementById('prod-cargas_ruptura').value;
+            const fileInput = document.getElementById('prod-image');
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('tag', tag);
+            formData.append('description', desc);
+            formData.append('bitolas', bitolas);
+            formData.append('cores', cores);
+            formData.append('metragens', metragens);
+            formData.append('cargas_ruptura', cargas_ruptura);
+            if (fileInput.files[0]) {
+                formData.append('image', fileInput.files[0]);
+            }
+
+            const tk = localStorage.getItem('riomar_token');
+            const method = editProductId ? 'PUT' : 'POST';
+            const endpoint = editProductId ? `/products/${editProductId}` : '/products';
+
+            const res = await fetch(API_URL + endpoint, {
+                method: method,
+                headers: { 'Authorization': `Bearer ${tk}` },
+                body: formData
+            });
+
+            if (res.status === 401 || res.status === 403) {
+                logout();
+                return;
+            }
+
+            document.getElementById('product-modal').classList.remove('active');
+            document.getElementById('form-product').reset();
+            editProductId = null;
+            loadProducts();
+        }
+
+        async function deleteProduct(id) {
+            if (confirm('Certeza que deseja excluir este produto?')) {
+                await fetchAPI(`/products/${id}`, 'DELETE');
+                loadProducts();
+            }
+        }
+    </script>
+</body>
+
+</html>

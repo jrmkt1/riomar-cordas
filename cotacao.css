@@ -1,0 +1,597 @@
+/* =============================================
+   RIOMAR CORDAS – Sistema de Cotações
+   cotacao.css
+   ============================================= */
+
+/* ── FAB (botão flutuante) ──────────────────── */
+.cotacao-fab {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-light, #1a7ad4), var(--cyan, #24a9e1));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 6px 24px rgba(36, 169, 225, 0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+}
+
+.cotacao-fab:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 10px 32px rgba(36, 169, 225, 0.55);
+}
+
+.cotacao-fab__badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    background: #e53e3e;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    animation: badge-pop 0.3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+@keyframes badge-pop {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* ── Widget de cotação ──────────────────────── */
+.cot-widget {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.cot-widget__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue-dark, #1a3a6b);
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #eef2f7;
+}
+
+/* ── Campos ─────────────────────────────────── */
+.cot-field {
+    margin-bottom: 18px;
+}
+
+.cot-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.3px;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+}
+
+/* ── Select ─────────────────────────────────── */
+.cot-select-wrap {
+    position: relative;
+}
+
+.cot-select-wrap::after {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #6b7280;
+    pointer-events: none;
+}
+
+.cot-select {
+    width: 100%;
+    padding: 11px 40px 11px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+    background: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cot-select:focus {
+    outline: none;
+    border-color: var(--blue-light, #1a7ad4);
+    box-shadow: 0 0 0 3px rgba(36, 169, 225, 0.18);
+}
+
+/* ── Qty ────────────────────────────────────── */
+.cot-qty {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.cot-qty__btn {
+    width: 42px;
+    height: 44px;
+    border: none;
+    background: #f3f4f6;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+
+.cot-qty__btn:hover {
+    background: #e5e7eb;
+}
+
+.cot-qty__input {
+    width: 64px;
+    height: 44px;
+    border: none;
+    border-left: 1.5px solid #d1d5db;
+    border-right: 1.5px solid #d1d5db;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1f2937;
+    font-family: 'Inter', sans-serif;
+}
+
+.cot-qty__input:focus {
+    outline: none;
+    background: #f0f9ff;
+}
+
+.cot-qty__input::-webkit-inner-spin-button,
+.cot-qty__input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* ── Textarea ───────────────────────────────── */
+.cot-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-family: 'Inter', sans-serif;
+    color: #374151;
+    resize: vertical;
+    min-height: 64px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cot-textarea:focus {
+    outline: none;
+    border-color: var(--blue-light, #1a7ad4);
+    box-shadow: 0 0 0 3px rgba(36, 169, 225, 0.15);
+}
+
+/* ── Botão principal ────────────────────────── */
+.cot-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #1a7ad4, #24a9e1);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 4px 16px rgba(36, 169, 225, 0.35);
+    margin-top: 4px;
+}
+
+.cot-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(36, 169, 225, 0.45);
+    background: linear-gradient(135deg, #1569bb, #1a9dc9);
+}
+
+.cot-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Toast ──────────────────────────────────── */
+.cot-toast {
+    display: none;
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.cot-toast a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.cot-toast--show {
+    display: block;
+    opacity: 1;
+}
+
+.cot-toast--success {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+}
+
+.cot-toast--error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
+
+/* ── Meta info ──────────────────────────────── */
+.cot-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    color: #9ca3af;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #f3f4f6;
+}
+
+/* ════════════════════════════════════════════
+   PÁGINA DE REVISÃO (cotacao.html)
+   ════════════════════════════════════════════ */
+.cotacao-page {
+    min-height: 60vh;
+    padding: 60px 0 80px;
+    background: var(--gray-100, #f8fafc);
+}
+
+.cotacao-page__header {
+    margin-bottom: 36px;
+}
+
+.cotacao-page__header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    color: var(--blue-dark, #1a3a6b);
+    margin-bottom: 8px;
+}
+
+.cotacao-page__header p {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+/* Tabela de itens */
+.cot-table-wrap {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    margin-bottom: 32px;
+}
+
+.cot-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.cot-table thead tr {
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.cot-table th {
+    padding: 14px 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #6b7280;
+    text-align: left;
+}
+
+.cot-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.cot-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cot-table tbody tr:hover td {
+    background: #fafafa;
+}
+
+.cot-table__prod {
+    font-weight: 600;
+    color: #1a3a6b;
+}
+
+.cot-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cot-item-qty input {
+    width: 58px;
+    padding: 6px 10px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.cot-item-qty input:focus {
+    outline: none;
+    border-color: #1a7ad4;
+}
+
+.cot-remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ef4444;
+    padding: 4px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.15s;
+}
+
+.cot-remove-btn:hover {
+    background: #fee2e2;
+}
+
+/* ── Form de envio ──────────────────────────── */
+.cot-form-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+
+.cot-form-card h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cot-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.cot-form-grid .full {
+    grid-column: 1 / -1;
+}
+
+.cot-form-field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+}
+
+.cot-form-field input,
+.cot-form-field select,
+.cot-form-field textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+.cot-form-field input:focus,
+.cot-form-field select:focus,
+.cot-form-field textarea:focus {
+    outline: none;
+    border-color: #1a7ad4;
+    box-shadow: 0 0 0 3px rgba(36, 169, 225, 0.15);
+}
+
+.cot-form-field textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.cot-submit-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.cot-submit-btn {
+    flex: 1;
+    min-width: 180px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #1a7ad4, #24a9e1);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(36, 169, 225, 0.35);
+}
+
+.cot-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(36, 169, 225, 0.45);
+}
+
+.cot-clear-btn {
+    padding: 14px 20px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.15s, color 0.15s;
+}
+
+.cot-clear-btn:hover {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+/* ── Empty state ────────────────────────────── */
+.cot-empty {
+    text-align: center;
+    padding: 64px 24px;
+    color: #9ca3af;
+}
+
+.cot-empty svg {
+    margin-bottom: 20px;
+    opacity: 0.35;
+}
+
+.cot-empty h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.cot-empty p {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+/* ── Sucesso ────────────────────────────────── */
+.cot-success {
+    text-align: center;
+    padding: 64px 24px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #bbf7d0;
+}
+
+.cot-success__icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.cot-success h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    color: #15803d;
+    margin-bottom: 8px;
+}
+
+.cot-success p {
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 700px) {
+    .cot-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cot-table th:nth-child(3),
+    .cot-table td:nth-child(3) {
+        display: none;
+    }
+
+    .cotacao-fab {
+        bottom: 16px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+    }
+}

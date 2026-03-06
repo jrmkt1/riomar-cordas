@@ -1,0 +1,912 @@
+[
+  {
+    "id": "expositores",
+    "url": "https://www.riomarcordas.com.br/index.php/expositores-2/",
+    "title": "",
+    "subtitle": "",
+    "textDescription": "",
+    "imageUrl": "",
+    "tables": []
+  },
+  {
+    "id": "produto-tropical",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/corda-tropical-riomar/",
+    "title": "Corda Tropical Riomar",
+    "subtitle": "<table width=\"577\">\n<tbody>\n<tr>\n<td width=\"134\"><strong>BITOLA</strong></td>\n<td width=\"134\"><strong>EMBALAGEM</strong></td>\n<td width=\"147\"><strong>METRAGEM</strong></td>\n<td width=\"162\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"134\">03 mm</td>\n<td width=\"134\">CARRETEL</td>\n<td width=\"147\">625 m</td>\n<td width=\"162\">126.63</td>\n</tr>\n<tr>\n<td width=\"134\">04 mm</td>\n<td width=\"134\">CARRETEL</td>\n<td width=\"147\">360 m</td>\n<td width=\"162\">164,03</td>\n</tr>\n<tr>\n<td width=\"134\">05 mm</td>\n<td width=\"134\">CARRETEL</td>\n<td width=\"147\">250 m</td>\n<td width=\"162\">308,85</td>\n</tr>\n<tr>\n<td width=\"134\">06 mm</td>\n<td width=\"134\">CARRETEL</td>\n<td width=\"147\">165 m</td>\n<td width=\"162\">371,3</td>\n</tr>\n<tr>\n<td width=\"134\">08 mm</td>\n<td width=\"134\">CARRETEL</td>\n<td width=\"147\">258 m</td>\n<td width=\"162\">762,52</td>\n</tr>\n<tr>\n<td width=\"134\">10 mm</td>\n<td width=\"134\">CARRETEL</td>\n<td width=\"147\">190 m</td>\n<td width=\"162\">905,96</td>\n</tr>\n<tr>\n<td>12 mm</td>\n<td width=\"134\">CARRETEL</td>\n<td>140 m</td>\n<td>1183,58</td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\nCORDA POLIPROPILENO\nTRANÇADA CARRETEL 100% VIRGEM\nCores Disponíveis:",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/07/tropica-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMBALAGEM",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "03 mm",
+            "CARRETEL",
+            "625 m",
+            "126.63"
+          ],
+          [
+            "04 mm",
+            "CARRETEL",
+            "360 m",
+            "164,03"
+          ],
+          [
+            "05 mm",
+            "CARRETEL",
+            "250 m",
+            "308,85"
+          ],
+          [
+            "06 mm",
+            "CARRETEL",
+            "165 m",
+            "371,3"
+          ],
+          [
+            "08 mm",
+            "CARRETEL",
+            "258 m",
+            "762,52"
+          ],
+          [
+            "10 mm",
+            "CARRETEL",
+            "190 m",
+            "905,96"
+          ],
+          [
+            "12 mm",
+            "CARRETEL",
+            "140 m",
+            "1183,58"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção03 mm04 mm05 mm06 mm08 mm10 mm12 mm"
+          ],
+          [
+            "Escolha uma opçãoAmareloAzulBrancaMulticorPretaVerdeVermelhaLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "03 mm, 04 mm, 05 mm, 06 mm, 08 mm, 10 mm, 12 mm"
+          ],
+          [
+            "Amarelo, Azul, Branca, Multicor, Preta, Verde, Vermelha"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-meadas",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/cordas-meadas/",
+    "title": "Cordas Meadas",
+    "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\"><strong>BITOLA</strong></td>\n<td width=\"98\"><strong>EMB.</strong></td>\n<td width=\"141\"><strong>METRAGEM</strong></td>\n<td width=\"131\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"109\">06 mm</td>\n<td width=\"98\">UNIT.</td>\n<td width=\"141\">15/20/30 m</td>\n<td width=\"131\">371,3</td>\n</tr>\n<tr>\n<td width=\"109\">08 mm</td>\n<td width=\"98\">UNIT.</td>\n<td width=\"141\">10/15/20/30 m</td>\n<td width=\"131\">762,52</td>\n</tr>\n<tr>\n<td width=\"109\">10 mm</td>\n<td width=\"98\">UNIT.</td>\n<td width=\"141\">10/15/20/30 m</td>\n<td width=\"131\">905,96</td>\n</tr>\n<tr>\n<td width=\"109\">12 mm</td>\n<td width=\"98\">UNIT.</td>\n<td width=\"141\">10/15/20/30 m</td>\n<td width=\"131\">1183,58</td>\n</tr>\n<tr>\n<td width=\"109\"></td>\n<td width=\"98\"></td>\n<td width=\"141\"></td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\"></td>\n<td width=\"98\"></td>\n<td width=\"141\"></td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\"><strong>BITOLA</strong></td>\n<td colspan=\"2\" width=\"239\"><strong>EMB. / METRAGEM</strong></td>\n<td width=\"131\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"109\">06 mm</td>\n<td colspan=\"2\" width=\"239\">CAIXA 36 UN. / 15 m<br>\nCAIXA 25 UN. / 20 m<br>\nCAIXA 16 UN. / 30 M</td>\n<td width=\"131\">371,3</td>\n</tr>\n<tr>\n<td width=\"109\">08 mm</td>\n<td colspan=\"2\" width=\"239\">CAIXA 30 UN. / 10 m<br>\nCAIXA 20 UN. / 15 m<br>\nCAIXA 16 UN. / 20 m<br>\nCAIXA 12 UN. / 30 m</td>\n<td width=\"131\">762,52</td>\n</tr>\n<tr>\n<td width=\"109\">10 mm</td>\n<td colspan=\"2\" width=\"239\">CAIXA 20 UN. / 10 m<br>\nCAIXA 16 UN. / 15 m<br>\nCAIXA 12 UN. / 20 m<br>\nCAIXA 9 UN. / 30 m</td>\n<td width=\"131\">905,96</td>\n</tr>\n<tr>\n<td width=\"109\">12 mm</td>\n<td colspan=\"2\" width=\"239\">CAIXA 16 UN. / 10 m<br>\nCAIXA 12 UN. / 15 m<br>\nCAIXA 10 UN. / 20 m<br>\nCAIXA 9 UN. / 30 m</td>\n<td width=\"131\">1183,58</td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\n• Melhor exposição;\n• Praticidade no estoque;\n• Venda em embalagem fechada unitária.",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/cordas_meadas-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMB.",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "06 mm",
+            "UNIT.",
+            "15/20/30 m",
+            "371,3"
+          ],
+          [
+            "08 mm",
+            "UNIT.",
+            "10/15/20/30 m",
+            "762,52"
+          ],
+          [
+            "10 mm",
+            "UNIT.",
+            "10/15/20/30 m",
+            "905,96"
+          ],
+          [
+            "12 mm",
+            "UNIT.",
+            "10/15/20/30 m",
+            "1183,58"
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "BITOLA",
+            "EMB. / METRAGEM",
+            "CARGA RUPTURA"
+          ],
+          [
+            "06 mm",
+            "CAIXA 36 UN. / 15 m\nCAIXA 25 UN. / 20 m\nCAIXA 16 UN. / 30 M",
+            "371,3"
+          ],
+          [
+            "08 mm",
+            "CAIXA 30 UN. / 10 m\nCAIXA 20 UN. / 15 m\nCAIXA 16 UN. / 20 m\nCAIXA 12 UN. / 30 m",
+            "762,52"
+          ],
+          [
+            "10 mm",
+            "CAIXA 20 UN. / 10 m\nCAIXA 16 UN. / 15 m\nCAIXA 12 UN. / 20 m\nCAIXA 9 UN. / 30 m",
+            "905,96"
+          ],
+          [
+            "12 mm",
+            "CAIXA 16 UN. / 10 m\nCAIXA 12 UN. / 15 m\nCAIXA 10 UN. / 20 m\nCAIXA 9 UN. / 30 m",
+            "1183,58"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção06 mm08 mm10 mm12 mm"
+          ],
+          [
+            "Escolha uma opçãoMulticor"
+          ],
+          [
+            "Escolha uma opção10 m15 m20 m30 mLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "06 mm, 08 mm, 10 mm, 12 mm"
+          ],
+          [
+            "Multicor"
+          ],
+          [
+            "10 m, 15 m, 20 m, 30 m"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-torcida-branca",
+    "url": "https://www.riomarcordas.com.br/index.php/product-category/torcida-branca/",
+    "title": "Torcida Branca",
+    "subtitle": "",
+    "textDescription": "",
+    "imageUrl": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 300 300'%2F%3E",
+    "tables": []
+  },
+  {
+    "id": "produto-pe-azul",
+    "url": "https://www.riomarcordas.com.br/index.php/product-category/pe_azul/",
+    "title": "PE Azul",
+    "subtitle": "",
+    "textDescription": "",
+    "imageUrl": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 300 300'%2F%3E",
+    "tables": []
+  },
+  {
+    "id": "produto-pp-sinalizacao",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/torcida-pp-sinalizacao/",
+    "title": "Torcida PP Sinalização",
+    "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\"><strong>BITOLA</strong></td>\n<td width=\"98\"><strong>EMB.</strong></td>\n<td width=\"141\"><strong>METRAGEM</strong></td>\n<td width=\"131\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"109\">14 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">187 m</td>\n<td width=\"131\">1655</td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\nCORDA POLIPROPILENO TORCIDA 100% VIRGEM SINALIZAÇÃO\nCORES DISPONÍVEIS:",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/torcida_pp_sinalizacao-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMB.",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "14 mm",
+            "ROLO",
+            "187 m",
+            "1655"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção14 mm"
+          ],
+          [
+            "Escolha uma opçãoPreto / AmareloLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "14 mm"
+          ],
+          [
+            "Preto / Amarelo"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-trancada",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/corda-trancada-riomar/",
+    "title": "Corda Trançada Riomar",
+    "subtitle": "<table width=\"577\">\n<tbody>\n<tr>\n<td width=\"134\"><strong>BITOLA</strong></td>\n<td width=\"134\"><strong>EMBALAGEM</strong></td>\n<td width=\"147\"><strong>METRAGEM</strong></td>\n<td width=\"162\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"134\">2,0 mm</td>\n<td width=\"134\">ROLO</td>\n<td width=\"147\">408 mts</td>\n<td width=\"162\">43,58</td>\n</tr>\n<tr>\n<td width=\"134\">2,5 mm</td>\n<td width=\"134\">ROLO</td>\n<td width=\"147\">372 mts</td>\n<td width=\"162\">43,93</td>\n</tr>\n<tr>\n<td width=\"134\">3,0 mm</td>\n<td width=\"134\">ROLO</td>\n<td width=\"147\">277 mts</td>\n<td width=\"162\">61,77</td>\n</tr>\n<tr>\n<td width=\"134\">3,5 mm</td>\n<td width=\"134\">ROLO</td>\n<td width=\"147\">169 mts</td>\n<td width=\"162\">76,18</td>\n</tr>\n<tr>\n<td width=\"134\">04 mm</td>\n<td width=\"134\">ROLO</td>\n<td width=\"147\">400 mts</td>\n<td width=\"162\">100,2</td>\n</tr>\n<tr>\n<td width=\"134\">05 mm</td>\n<td width=\"134\">ROLO</td>\n<td width=\"147\">356 mts</td>\n<td width=\"162\">156,83</td>\n</tr>\n<tr>\n<td>06 mm</td>\n<td width=\"134\">ROLO</td>\n<td>191 mts</td>\n<td>266,64</td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\nCORDA POLIPROPILENO TRANÇADA ROLO 100% VIRGEM\nCORES DISPONÍVEIS:",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/07/img_tran_cores-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMBALAGEM",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "2,0 mm",
+            "ROLO",
+            "408 mts",
+            "43,58"
+          ],
+          [
+            "2,5 mm",
+            "ROLO",
+            "372 mts",
+            "43,93"
+          ],
+          [
+            "3,0 mm",
+            "ROLO",
+            "277 mts",
+            "61,77"
+          ],
+          [
+            "3,5 mm",
+            "ROLO",
+            "169 mts",
+            "76,18"
+          ],
+          [
+            "04 mm",
+            "ROLO",
+            "400 mts",
+            "100,2"
+          ],
+          [
+            "05 mm",
+            "ROLO",
+            "356 mts",
+            "156,83"
+          ],
+          [
+            "06 mm",
+            "ROLO",
+            "191 mts",
+            "266,64"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção03 mm04 mm05 mm06 mm08 mm10 mm12 mm"
+          ],
+          [
+            "Escolha uma opçãoAmareloAzulBrancaMulticorPretaVerdeVermelhaLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "03 mm, 04 mm, 05 mm, 06 mm, 08 mm, 10 mm, 12 mm"
+          ],
+          [
+            "Amarelo, Azul, Branca, Multicor, Preta, Verde, Vermelha"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-trancada-branca",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/trancada-branca/",
+    "title": "Trançada Branca",
+    "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\">BITOLA</td>\n<td width=\"98\">EMB.</td>\n<td width=\"141\">METRAGEM</td>\n<td width=\"131\">CARGA RUPTURA</td>\n</tr>\n<tr>\n<td width=\"109\">8,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">50 / 100 / 200 m</td>\n<td width=\"131\">646,88</td>\n</tr>\n<tr>\n<td width=\"109\">10,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">50 / 100 / 200 m</td>\n<td width=\"131\">952,5</td>\n</tr>\n<tr>\n<td width=\"109\">12,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">50 / 100 / 200 m</td>\n<td width=\"131\">1066,65</td>\n</tr>\n<tr>\n<td width=\"109\">14,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">50 / 100 / 200 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">16,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">50 / 100 / 200 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">18,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">50 / 100 / 200 m</td>\n<td width=\"131\"></td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\nPOLIPROPILENO TRANÇ. EM METROS ROLOS COM 50M, 100M e 200M – 100% VIRGEM\nCORES DISPONÍVEIS:",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/pp_trancada_branca-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMB.",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "8,0 mm",
+            "ROLO",
+            "50 / 100 / 200 m",
+            "646,88"
+          ],
+          [
+            "10,0 mm",
+            "ROLO",
+            "50 / 100 / 200 m",
+            "952,5"
+          ],
+          [
+            "12,0 mm",
+            "ROLO",
+            "50 / 100 / 200 m",
+            "1066,65"
+          ],
+          [
+            "14,0 mm",
+            "ROLO",
+            "50 / 100 / 200 m",
+            ""
+          ],
+          [
+            "16,0 mm",
+            "ROLO",
+            "50 / 100 / 200 m",
+            ""
+          ],
+          [
+            "18,0 mm",
+            "ROLO",
+            "50 / 100 / 200 m",
+            ""
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção08 mm10 mm12 mm14 mm16 mm18 mm"
+          ],
+          [
+            "Escolha uma opçãoBranca"
+          ],
+          [
+            "Escolha uma opção50 m100 m200 mLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "08 mm, 10 mm, 12 mm, 14 mm, 16 mm, 18 mm"
+          ],
+          [
+            "Branca"
+          ],
+          [
+            "50 m, 100 m, 200 m"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-trancada-carga",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/trancada-carga/",
+    "title": "Trançada Carga",
+    "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\">BITOLA</td>\n<td width=\"98\">EMB.</td>\n<td width=\"141\">METRAGEM</td>\n<td width=\"131\">CARGA RUPTURA</td>\n</tr>\n<tr>\n<td width=\"109\">8,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">110 / 220 m</td>\n<td width=\"131\">646,88</td>\n</tr>\n<tr>\n<td width=\"109\">10,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">110 / 220 m</td>\n<td width=\"131\">952,5</td>\n</tr>\n<tr>\n<td width=\"109\">12,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">110 / 220 m</td>\n<td width=\"131\">1066,65</td>\n</tr>\n<tr>\n<td width=\"109\">14,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">110 / 220 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">16,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">110 / 220 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">18,0 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">110 / 220 m</td>\n<td width=\"131\"></td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\nCORDA POLIPROPILENO TRANÇADA 100% VIRGEM\nCORES DISPONÍVEIS:",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/trancada_carga-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMB.",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "8,0 mm",
+            "ROLO",
+            "110 / 220 m",
+            "646,88"
+          ],
+          [
+            "10,0 mm",
+            "ROLO",
+            "110 / 220 m",
+            "952,5"
+          ],
+          [
+            "12,0 mm",
+            "ROLO",
+            "110 / 220 m",
+            "1066,65"
+          ],
+          [
+            "14,0 mm",
+            "ROLO",
+            "110 / 220 m",
+            ""
+          ],
+          [
+            "16,0 mm",
+            "ROLO",
+            "110 / 220 m",
+            ""
+          ],
+          [
+            "18,0 mm",
+            "ROLO",
+            "110 / 220 m",
+            ""
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção08 mm10 mm12 mm14 mm16 mm18 mm"
+          ],
+          [
+            "Escolha uma opçãoBrancaBranca / Vermelha"
+          ],
+          [
+            "Escolha uma opção110 m220 mLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "08 mm, 10 mm, 12 mm, 14 mm, 16 mm, 18 mm"
+          ],
+          [
+            "Branca, Branca / Vermelha"
+          ],
+          [
+            "110 m, 220 m"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-trancada-chata",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/trancada-chata/",
+    "title": "Trançada Chata",
+    "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\"><strong>BITOLA</strong></td>\n<td width=\"98\"><strong>EMB</strong>.</td>\n<td width=\"141\"><strong>METRAGEM</strong></td>\n<td width=\"131\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"109\">22 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">95 m</td>\n<td width=\"131\"></td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\nCORDA POLIPROPILENO TRANÇADA 100% VIRGEM\nCORES DISPONÍVEIS:",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/trancada_chata-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMB.",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "22 mm",
+            "ROLO",
+            "95 m",
+            ""
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção22 mm"
+          ],
+          [
+            "Escolha uma opçãoPreta / BrancaVemelha / Preta"
+          ],
+          [
+            "Escolha uma opção95 mLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor",
+          "Metragem"
+        ],
+        "rows": [
+          [
+            "22 mm"
+          ],
+          [
+            "Preta / Branca, Vemelha / Preta"
+          ],
+          [
+            "95 m"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-trancada-per",
+    "url": "https://www.riomarcordas.com.br/index.php/produto/trancada-per/",
+    "title": "Trançada PER",
+    "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\"><strong>BITOLA</strong></td>\n<td width=\"98\"><strong>EMB</strong>.</td>\n<td width=\"141\"><strong>METRAGEM</strong></td>\n<td width=\"131\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"109\">06 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">979 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">08 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">310,2 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">10 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">215,6 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">12 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">141,9 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">14 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">134,2 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">16 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">85,8 m</td>\n<td width=\"131\"></td>\n</tr>\n<tr>\n<td width=\"109\">25 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">184,8 m</td>\n<td></td>\n</tr>\n</tbody>\n</table>",
+    "textDescription": "Descrição\n\nCORDA TRANÇADA MONOFILAMENTO PER – 100% RECICLADO\nCORES DISPONÍVEIS:",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/trancada_per-600x400.jpg",
+    "tables": [
+      {
+        "headers": [
+          "BITOLA",
+          "EMB.",
+          "METRAGEM",
+          "CARGA RUPTURA"
+        ],
+        "rows": [
+          [
+            "06 mm",
+            "ROLO",
+            "979 m",
+            ""
+          ],
+          [
+            "08 mm",
+            "ROLO",
+            "310,2 m",
+            ""
+          ],
+          [
+            "10 mm",
+            "ROLO",
+            "215,6 m",
+            ""
+          ],
+          [
+            "12 mm",
+            "ROLO",
+            "141,9 m",
+            ""
+          ],
+          [
+            "14 mm",
+            "ROLO",
+            "134,2 m",
+            ""
+          ],
+          [
+            "16 mm",
+            "ROLO",
+            "85,8 m",
+            ""
+          ],
+          [
+            "25 mm",
+            "ROLO",
+            "184,8 m",
+            ""
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "Escolha uma opção06 mm08 mm10 mm12 mm14 mm16 mm25 mm"
+          ],
+          [
+            "Escolha uma opçãoPretaLimpar"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Bitola",
+          "Cor"
+        ],
+        "rows": [
+          [
+            "06 mm, 08 mm, 10 mm, 12 mm, 14 mm, 16 mm, 25 mm"
+          ],
+          [
+            "Preta"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "produto-trancada-pet",
+    "url": "https://www.riomarcordas.com.br/index.php/product-category/trancada-pet/",
+    "title": "Trançada PET",
+    "subtitle": "",
+    "textDescription": "",
+    "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/pet_rolo-1-600x400.jpg",
+    "tables": [],
+    "products": [
+      {
+        "title": "Trançada PET Rolo",
+        "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\"><strong>BITOLA</strong></td>\n<td width=\"98\"><strong>EMB</strong>.</td>\n<td width=\"141\"><strong>METRAGEM</strong></td>\n<td width=\"131\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"109\">04 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">406,5 m</td>\n<td width=\"131\">181,88</td>\n</tr>\n<tr>\n<td width=\"109\">06 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">295,28 m</td>\n<td width=\"131\">189,09</td>\n</tr>\n<tr>\n<td width=\"109\">08 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">378,31 m</td>\n<td width=\"131\">287,92</td>\n</tr>\n<tr>\n<td width=\"109\">10 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">216,29 m</td>\n<td width=\"131\">553,53</td>\n</tr>\n<tr>\n<td width=\"109\">12 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">138,36 m</td>\n<td width=\"131\">598,83</td>\n</tr>\n<tr>\n<td width=\"109\">14 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">104,36 m</td>\n<td width=\"131\">840,07</td>\n</tr>\n<tr>\n<td width=\"109\">16 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">84,55 m</td>\n<td width=\"131\">1123,87</td>\n</tr>\n<tr>\n<td width=\"109\">19 mm</td>\n<td width=\"98\">ROLO</td>\n<td width=\"141\">60,04 m</td>\n<td></td>\n</tr>\n</tbody>\n</table>",
+        "textDescription": "Descrição\n\nCORDA POLIÉSTER TRANÇADA ROLO\nCORES DISPONÍVEIS:",
+        "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/pet_rolo-1-600x400.jpg",
+        "tables": [
+          {
+            "headers": [
+              "BITOLA",
+              "EMB.",
+              "METRAGEM",
+              "CARGA RUPTURA"
+            ],
+            "rows": [
+              [
+                "04 mm",
+                "ROLO",
+                "406,5 m",
+                "181,88"
+              ],
+              [
+                "06 mm",
+                "ROLO",
+                "295,28 m",
+                "189,09"
+              ],
+              [
+                "08 mm",
+                "ROLO",
+                "378,31 m",
+                "287,92"
+              ],
+              [
+                "10 mm",
+                "ROLO",
+                "216,29 m",
+                "553,53"
+              ],
+              [
+                "12 mm",
+                "ROLO",
+                "138,36 m",
+                "598,83"
+              ],
+              [
+                "14 mm",
+                "ROLO",
+                "104,36 m",
+                "840,07"
+              ],
+              [
+                "16 mm",
+                "ROLO",
+                "84,55 m",
+                "1123,87"
+              ],
+              [
+                "19 mm",
+                "ROLO",
+                "60,04 m",
+                ""
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Bitola",
+              "Cor"
+            ],
+            "rows": [
+              [
+                "Escolha uma opção06 mm08 mm10 mm12 mm14 mm16 mm19 mm"
+              ],
+              [
+                "Escolha uma opçãoBrancaVerdeLimpar"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Bitola",
+              "Cor"
+            ],
+            "rows": [
+              [
+                "06 mm, 08 mm, 10 mm, 12 mm, 14 mm, 16 mm, 19 mm"
+              ],
+              [
+                "Branca, Verde"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Trançada PET Carretel",
+        "subtitle": "<table width=\"479\">\n<tbody>\n<tr>\n<td width=\"109\"><strong>BITOLA</strong></td>\n<td width=\"98\"><strong>EMB</strong>.</td>\n<td width=\"141\"><strong>METRAGEM</strong></td>\n<td width=\"131\"><strong>CARGA RUPTURA</strong></td>\n</tr>\n<tr>\n<td width=\"109\">06 mm</td>\n<td width=\"98\">CARRETEL</td>\n<td width=\"141\">180 m</td>\n<td width=\"131\">189,09</td>\n</tr>\n<tr>\n<td width=\"109\">08 mm</td>\n<td width=\"98\">CARRETEL</td>\n<td width=\"141\">220 m</td>\n<td width=\"131\">287,92</td>\n</tr>\n<tr>\n<td width=\"109\">10 mm</td>\n<td width=\"98\">CARRETEL</td>\n<td width=\"141\">150 m</td>\n<td width=\"131\">553,53</td>\n</tr>\n<tr>\n<td width=\"109\">12 mm</td>\n<td width=\"98\">CARRETEL</td>\n<td width=\"141\">105 m</td>\n<td width=\"131\">598,83</td>\n</tr>\n<tr>\n<td width=\"109\">14 mm</td>\n<td width=\"98\">CARRETEL</td>\n<td width=\"141\">70 m</td>\n<td width=\"131\">840,07</td>\n</tr>\n<tr>\n<td width=\"109\">16 mm</td>\n<td width=\"98\">CARRETEL</td>\n<td width=\"141\">55 m</td>\n<td width=\"131\">1123,87</td>\n</tr>\n</tbody>\n</table>",
+        "textDescription": "Descrição\n\nCORDA POLIÉSTER TRANÇADA CARRETEL\nCORES DISPONÍVEIS:",
+        "imageUrl": "https://www.riomarcordas.com.br/wp-content/uploads/2019/08/pet_carretel-600x400.jpg",
+        "tables": [
+          {
+            "headers": [
+              "BITOLA",
+              "EMB.",
+              "METRAGEM",
+              "CARGA RUPTURA"
+            ],
+            "rows": [
+              [
+                "06 mm",
+                "CARRETEL",
+                "180 m",
+                "189,09"
+              ],
+              [
+                "08 mm",
+                "CARRETEL",
+                "220 m",
+                "287,92"
+              ],
+              [
+                "10 mm",
+                "CARRETEL",
+                "150 m",
+                "553,53"
+              ],
+              [
+                "12 mm",
+                "CARRETEL",
+                "105 m",
+                "598,83"
+              ],
+              [
+                "14 mm",
+                "CARRETEL",
+                "70 m",
+                "840,07"
+              ],
+              [
+                "16 mm",
+                "CARRETEL",
+                "55 m",
+                "1123,87"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Bitola",
+              "Cor"
+            ],
+            "rows": [
+              [
+                "Escolha uma opção06 mm08 mm10 mm12 mm14 mm16 mm"
+              ],
+              [
+                "Escolha uma opçãoBrancaVerdeLimpar"
+              ]
+            ]
+          },
+          {
+            "headers": [
+              "Bitola",
+              "Cor"
+            ],
+            "rows": [
+              [
+                "06 mm, 08 mm, 10 mm, 12 mm, 14 mm, 16 mm"
+              ],
+              [
+                "Branca, Verde"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "distribuicao",
+    "url": "https://www.riomarcordas.com.br/index.php/product-category/distribuicao/",
+    "title": "Distribuição",
+    "subtitle": "",
+    "textDescription": "",
+    "imageUrl": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 300 300'%2F%3E",
+    "tables": []
+  }
+]
