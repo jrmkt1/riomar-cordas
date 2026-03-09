@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 130" role="img" aria-label="Riomar Cordas">
+  <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  RIOMAR CORDAS – Logo SVG                               ║
+    ║  Cores: teal #3ECFB2  |  azul-roxo #5A5EA8             ║
+    ╚══════════════════════════════════════════════════════════╝
+
+    Geometria: grid de losangos (38×38px) formando dois chevrons "»"
+    Padrão xadrez: azul nas diagonais ímpares, verde nas pares
+    Colunas: 4 colunas de losangos, 3 linhas
+  -->
+
+  <!-- ══ DEFINIÇÕES E CORES ══════════════════════════════════ -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- ══ ÍCONE CHEVRON (losangos intercalados) ══════════════ -->
+  <!--
+    Cada losango é definido pelo centro (cx,cy) com meio-eixo 19px:
+    points = "cx,cy-19  cx+19,cy  cx,cy+19  cx-19,cy"
+    
+    Layout (cx, cy):
+      Linha A (y=32):  col1=32, col2=70, col3=108
+      Linha B (y=65):  col1.5=51, col2.5=89, col3.5=127
+      Linha C (y=98):  col1=32, col2=70, col3=108
+  -->
+
+  <!-- Linha A (topo) -->
+  <polygon points="32,13  51,32  32,51  13,32"  fill="#5A5EA8"/>  <!-- A1 azul -->
+  <polygon points="70,13  89,32  70,51  51,32"  fill="#3ECFB2"/>  <!-- A2 verde -->
+  <polygon points="108,13 127,32 108,51  89,32" fill="#5A5EA8"/>  <!-- A3 azul -->
+
+  <!-- Linha B (meio – intercalada) -->
+  <polygon points="51,46  70,65  51,84  32,65"  fill="#3ECFB2"/>  <!-- B1 verde -->
+  <polygon points="89,46  108,65  89,84  70,65" fill="#5A5EA8"/>  <!-- B2 azul -->
+  <polygon points="127,46 146,65 127,84 108,65"  fill="#3ECFB2"/> <!-- B3 verde -->
+
+  <!-- Linha C (baixo) -->
+  <polygon points="32,79  51,98  32,117  13,98"  fill="#5A5EA8"/> <!-- C1 azul -->
+  <polygon points="70,79  89,98  70,117  51,98"  fill="#3ECFB2"/> <!-- C2 verde -->
+  <polygon points="108,79 127,98 108,117  89,98" fill="#5A5EA8"/> <!-- C3 azul -->
+
+  <!-- ══ TEXTO ════════════════════════════════════════════════ -->
+  <!--
+    "rio" em verde #3ECFB2
+    "mar" imediatamente depois em azul #5A5EA8  (sem espaço)
+    "CORDAS" menor, verde, alinhado à direita de "riomar"
+  -->
+
+  <!-- "rio" em verde, baseline y=95 -->
+  <text
+    x="170" y="95"
+    font-family="'Nunito','Outfit','Arial Rounded MT Bold','system-ui',sans-serif"
+    font-size="78" font-weight="900"
+    fill="#3ECFB2"
+    letter-spacing="-2">rio</text>
+
+  <!-- "mar" em azul, continuação na mesma linha -->
+  <!-- Largura aproximada de "rio" em 78px Nunito ≈ 148px -->
+  <text
+    x="318" y="95"
+    font-family="'Nunito','Outfit','Arial Rounded MT Bold','system-ui',sans-serif"
+    font-size="78" font-weight="900"
+    fill="#5A5EA8"
+    letter-spacing="-2">mar</text>
+
+  <!-- "CORDAS" em verde, menor, abaixo de "mar" -->
+  <!-- x alinhado com início de "mar" (x=318), y logo abaixo da baseline -->
+  <text
+    x="321" y="122"
+    font-family="'Nunito','Outfit','Arial Rounded MT Bold','system-ui',sans-serif"
+    font-size="22" font-weight="900"
+    fill="#3ECFB2"
+    letter-spacing="5">CORDAS</text>
+</svg>

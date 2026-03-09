@@ -970,15 +970,37 @@
 
 @media (max-width: 640px) {
     .page-banner {
-        padding: 56px 0 52px;
+        padding: 48px 0 44px;
+    }
+
+    .page-banner__title {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
+    }
+
+    .page-banner__desc {
+        font-size: 0.92rem;
     }
 
     .catalog-downloads {
         grid-template-columns: 1fr;
     }
 
+    .catalog-viewer {
+        padding: 32px 20px;
+    }
+
+    .catalog-viewer h2 {
+        font-size: 1.4rem;
+    }
+
     .reps-grid {
         grid-template-columns: 1fr;
+    }
+
+    .expositor-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 48px 0;
     }
 
     .form-row {
@@ -986,7 +1008,76 @@
     }
 
     .form-card {
-        padding: 28px 20px;
+        padding: 24px 16px;
+    }
+
+    .form-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .product-detail-card__body {
+        padding: 24px 20px;
+    }
+
+    .product-detail-card__body h2 {
+        font-size: 1.4rem;
+    }
+
+    .product-specs-table {
+        font-size: 0.78rem;
+    }
+
+    .product-specs-table th,
+    .product-specs-table td {
+        padding: 8px 12px;
+    }
+
+    .rep-card {
+        padding: 24px 20px;
+    }
+
+    .trabalhe-grid {
+        gap: 32px;
+    }
+
+    .benefits-list {
+        margin-top: 24px;
+    }
+
+    .contatos-grid {
+        gap: 28px;
+    }
+
+    .contact-info-item {
+        padding: 20px;
+    }
+
+    .timeline {
+        padding: 64px 0;
+    }
+
+    .timeline__grid {
+        gap: 36px;
+    }
+
+    .products-page {
+        padding: 48px 0;
+    }
+
+    .reps-page {
+        padding: 48px 0;
+    }
+
+    .trabalhe-page {
+        padding: 48px 0;
+    }
+
+    .contatos-page {
+        padding: 48px 0;
+    }
+
+    .catalog-page {
+        padding: 48px 0;
     }
 }
 

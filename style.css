@@ -1636,6 +1636,26 @@ svg {
     --topbar-h: 36px;
   }
 
+  .topbar__phone span {
+    display: none;
+  }
+
+  .topbar__inner {
+    padding: 0 16px;
+  }
+
+  .topbar__btn {
+    font-size: 0.75rem;
+  }
+
+  .logo__img {
+    height: 40px;
+  }
+
+  .mobile-nav {
+    padding: 8px 16px 16px;
+  }
+
   .nav {
     display: none;
   }
@@ -1649,8 +1669,17 @@ svg {
     min-height: 480px;
   }
 
+  .hero__content {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
   .hero__title {
     font-size: clamp(2.2rem, 9vw, 3.5rem);
+  }
+
+  .hero__desc {
+    font-size: 0.95rem;
   }
 
   .hero__tabs {
@@ -1667,27 +1696,114 @@ svg {
     max-width: 280px;
   }
 
+  /* Reduce vertical padding on mobile */
+  .features {
+    padding: 56px 0;
+  }
+
   .features__grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
+  .feature-card {
+    padding: 28px 24px;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .products {
+    padding: 64px 0;
+  }
+
+  .products__tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    margin-bottom: 32px;
+  }
+
+  .products__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .products__tab {
+    flex-shrink: 0;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+
   .products__grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stats {
+    padding: 56px 0;
   }
 
   .stats__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 28px 16px;
+  }
+
+  .stat-card__number {
+    font-size: 2.8rem;
+  }
+
+  .stat-card__suffix {
+    font-size: 2rem;
+  }
+
+  .stat-card__label {
+    font-size: 0.75rem;
+  }
+
+  .about {
+    padding: 64px 0;
   }
 
   .about__grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+  }
+
+  .about__img-wrap img {
+    height: 300px;
+  }
+
+  .about__img-accent {
+    display: none;
+  }
+
+  .cta-contact {
+    padding: 64px 0;
+  }
+
+  .cta-contact__title {
+    margin-bottom: 32px;
+  }
+
+  .info-sections {
+    padding: 64px 0;
   }
 
   .info-sections__grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .info-card {
+    padding: 32px 24px;
   }
 
   .cta-contact__btns {
@@ -1698,6 +1814,12 @@ svg {
   .cta-btn {
     width: 100%;
     max-width: 320px;
+    padding: 16px 28px;
+    font-size: 0.9rem;
+  }
+
+  .footer__top {
+    padding: 56px 0 40px;
   }
 
   .footer__grid {
@@ -1718,12 +1840,10 @@ svg {
   .whatsapp-float {
     padding: 14px;
     border-radius: 50%;
-    /* Alinhado à direita, mesmo lado das hero tabs */
     right: 0 !important;
     left: auto !important;
     bottom: 0 !important;
     border-radius: 50% 0 0 50%;
-    /* arredonda só o lado esquerdo */
   }
 
   .whatsapp-float svg {
@@ -1733,23 +1853,112 @@ svg {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
   .section-title {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .hero {
+    min-height: 420px;
   }
 
   .hero__content {
     padding: 0;
+    margin-left: 16px;
+    margin-right: 16px;
     text-align: center;
-    /* centralizado no mobile */
+  }
+
+  .hero__tag {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero__title {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    margin-bottom: 14px;
+  }
+
+  .hero__desc {
+    font-size: 0.88rem;
+    margin-bottom: 24px;
   }
 
   .hero__actions {
+    align-items: center;
     justify-content: center;
-    /* botões centralizados no mobile */
+  }
+
+  .hero__actions .btn {
+    max-width: 100%;
+    font-size: 0.85rem;
+    padding: 12px 24px;
+  }
+
+  .features {
+    padding: 48px 0;
+  }
+
+  .products {
+    padding: 48px 0;
+  }
+
+  .product-card__body {
+    padding: 20px;
+  }
+
+  .product-card__img {
+    height: 180px;
+  }
+
+  .stats {
+    padding: 48px 0;
   }
 
   .stat-card__number {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+  }
+
+  .stat-card__suffix {
+    font-size: 1.6rem;
+  }
+
+  .about {
+    padding: 48px 0;
+  }
+
+  .about__img-wrap img {
+    height: 220px;
+  }
+
+  .about__badge {
+    padding: 12px 18px;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .about__badge-year {
+    font-size: 1.5rem;
+  }
+
+  .cta-contact {
+    padding: 48px 0;
+  }
+
+  .cta-contact__title {
+    margin-bottom: 24px;
+  }
+
+  .info-sections {
+    padding: 48px 0;
+  }
+
+  .footer__top {
+    padding: 40px 0 28px;
   }
 }/* =============================================
    TABLES
