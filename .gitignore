@@ -5,3 +5,5 @@ server.err
 test.log
 *.log
 ~/ 
+
+.vercel
