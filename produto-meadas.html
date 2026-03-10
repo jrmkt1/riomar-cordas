@@ -126,7 +126,49 @@ CAIXA 9 UN. / 30 m</td><td>1183,58</td></tr>
         </div>
     </section>
     
-    <script>document.addEventListener("DOMContentLoaded",function(){CotacaoCart.renderWidget({"nome":"Cordas Meadas","categoria":"Meadas","sku":"MEAD-PP","embalagem":"Unit./Caixa","bitolas":["06 mm","08 mm","10 mm","12 mm"],"cores":["Multicor"]});});</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            CotacaoCart.renderWidget({
+                nome: 'Cordas Meadas',
+                categoria: 'Meadas',
+                sku: 'MEAD-PP',
+                embalagem: 'Unit./Caixa',
+                bitolas: ['06 mm', '08 mm', '10 mm', '12 mm'],
+                cores: ['Multicor'],
+            });
+
+            try {
+                const res = await fetch('/api/products', { cache: 'no-store' });
+                if (!res.ok) return;
+                const products = await res.json();
+
+                const normalize = (v) => (v || '')
+                    .toString()
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .toLowerCase();
+
+                const prod = products.find((p) =>
+                    normalize(p.title).includes('meada') || normalize(p.tag).includes('meada')
+                );
+
+                if (!prod) return;
+
+                if (prod.title) document.querySelector('.section-title').textContent = prod.title;
+                if (prod.description) document.querySelector('.produto-info p:nth-of-type(1)').textContent = prod.description;
+                if (prod.tag) document.querySelector('.section-tag').textContent = prod.tag;
+
+                if (prod.image_url) {
+                    const imgEl = document.querySelector('.produto-img-wrap img');
+                    if (imgEl) {
+                        imgEl.src = '/' + prod.image_url + '?v=' + Date.now();
+                    }
+                }
+            } catch (err) {
+                console.error('Erro ao atualizar dados dinamicos de Meadas:', err);
+            }
+        });
+    </script>
     <script src="app.js"></script>
 </body>
 

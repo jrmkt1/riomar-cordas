@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trancada PE Pesca - Riomar Cordas</title>
+    <meta name="description" content="Trancada PE Pesca Riomar com tabela tecnica para aplicacoes de pesca." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pages.css" />
+    <link rel="stylesheet" href="produto.css" />
+    <link rel="stylesheet" href="cotacao.css" />
+    <script src="components.js"></script>
+    <script src="cotacao.js"></script>
+</head>
+
+<body class="subproduto-page">
+    <section class="produto-hero"
+        style="background:linear-gradient(105deg,rgba(10,50,80,.9) 45%,rgba(10,50,80,.35) 100%),url('images/bg-pe.jpg') center/cover no-repeat;">
+        <div class="container">
+            <div class="breadcrumb breadcrumb--light">
+                <a href="index.html">Home</a><span class="breadcrumb__sep">></span>
+                <a href="produtos.html">Produtos</a><span class="breadcrumb__sep">></span>
+                <a href="produto-pe-azul.html">PE Azul</a><span class="breadcrumb__sep">></span>
+                <span class="current">Trancada PE Pesca</span>
+            </div>
+            <div class="produto-hero__tag">Subproduto</div>
+            <h1 class="produto-hero__title">TRANCADA<br>PE PESCA</h1>
+            <p class="produto-hero__desc">Versao da linha PE voltada para aplicacoes de pesca profissional e artesanal.</p>
+            <div class="produto-hero__actions">
+                <a href="produto-pe-azul.html" class="btn btn--ghost">Voltar para PE Azul</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="produto-main">
+        <div class="container">
+            <div class="produto-layout">
+                <div class="produto-info animate-on-scroll">
+                    <span class="section-tag">Descricao do Produto</span>
+                    <h2 class="section-title left">Trancada PE Pesca</h2>
+                    <div class="section-divider left"></div>
+                    <p>Subproduto da categoria PE Azul. Dados tecnicos baseados no site atual da Riomar.</p>
+                    <div id="cotacao-widget"></div>
+                </div>
+                <div class="produto-specs animate-on-scroll">
+                    <div class="produto-img-wrap">
+                        <img src="https://www.riomarcordas.com.br/wp-content/uploads/2019/08/trancada_pe_pesca-600x400.jpg"
+                            alt="Trancada PE Pesca" />
+                    </div>
+                    <div class="specs-card">
+                        <h3>Tabela de Especificacoes</h3>
+                        <table class="specs-table">
+                            <thead>
+                                <tr>
+                                    <th>Bitola</th>
+                                    <th>Emb.</th>
+                                    <th>Metragem</th>
+                                    <th>Carga Ruptura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>03 mm</td><td>Rolo</td><td>920 m</td><td>53</td></tr>
+                                <tr><td>04 mm</td><td>Rolo</td><td>715 m</td><td>76</td></tr>
+                                <tr><td>06 mm</td><td>Rolo</td><td>440 m</td><td>203,25</td></tr>
+                                <tr><td>08 mm</td><td>Rolo</td><td>690 m</td><td>330,75</td></tr>
+                                <tr><td>10 mm</td><td>Rolo</td><td>630 m</td><td>545,63</td></tr>
+                                <tr><td>12 mm</td><td>Rolo</td><td>375 m</td><td>540</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            CotacaoCart.renderWidget({
+                nome: 'Trancada PE Pesca',
+                categoria: 'PE Azul',
+                sku: 'PEA-PESCA',
+                embalagem: 'Rolo',
+                bitolas: ['03 mm', '04 mm', '06 mm', '08 mm', '10 mm', '12 mm'],
+                cores: ['Azul', 'Azul Escuro']
+            });
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>

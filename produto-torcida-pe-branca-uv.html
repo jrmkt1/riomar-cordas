@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Torcida PE Branca UV - Riomar Cordas</title>
+    <meta name="description" content="Torcida PE Branca UV Riomar com bitolas, metragens e carga de ruptura." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pages.css" />
+    <link rel="stylesheet" href="produto.css" />
+    <link rel="stylesheet" href="cotacao.css" />
+    <script src="components.js"></script>
+    <script src="cotacao.js"></script>
+</head>
+
+<body class="subproduto-page">
+    <section class="produto-hero"
+        style="background:linear-gradient(105deg,rgba(26,58,107,.88) 45%,rgba(26,58,107,.3) 100%),url('images/bg-pp.jpg') center/cover no-repeat;">
+        <div class="container">
+            <div class="breadcrumb breadcrumb--light">
+                <a href="index.html">Home</a><span class="breadcrumb__sep">></span>
+                <a href="produtos.html">Produtos</a><span class="breadcrumb__sep">></span>
+                <a href="produto-torcida-branca.html">Torcida Branca</a><span class="breadcrumb__sep">></span>
+                <span class="current">Torcida PE Branca UV</span>
+            </div>
+            <div class="produto-hero__tag">Subproduto</div>
+            <h1 class="produto-hero__title">TORCIDA PE<br>BRANCA UV</h1>
+            <p class="produto-hero__desc">Versao com protecao UV para uso externo e exposicao ao tempo.</p>
+            <div class="produto-hero__actions">
+                <a href="produto-torcida-branca.html" class="btn btn--ghost">Voltar para Torcida Branca</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="produto-main">
+        <div class="container">
+            <div class="produto-layout">
+                <div class="produto-info animate-on-scroll">
+                    <span class="section-tag">Descricao do Produto</span>
+                    <h2 class="section-title left">Torcida PE Branca UV</h2>
+                    <div class="section-divider left"></div>
+                    <p>Subproduto da categoria Torcida Branca. Dados tecnicos baseados no site atual da Riomar.</p>
+                    <div id="cotacao-widget"></div>
+                </div>
+                <div class="produto-specs animate-on-scroll">
+                    <div class="produto-img-wrap">
+                        <img src="https://www.riomarcordas.com.br/wp-content/uploads/2019/08/torcida_pp_branca-600x400.jpg"
+                            alt="Torcida PE Branca UV" />
+                    </div>
+                    <div class="specs-card">
+                        <h3>Tabela de Especificacoes</h3>
+                        <table class="specs-table">
+                            <thead>
+                                <tr>
+                                    <th>Bitola</th>
+                                    <th>Emb.</th>
+                                    <th>Metragem</th>
+                                    <th>Carga Ruptura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>02 mm</td><td>Rolo</td><td>1000 m</td><td>35</td></tr>
+                                <tr><td>03 mm</td><td>Rolo</td><td>620 m</td><td>-</td></tr>
+                                <tr><td>04 mm</td><td>Rolo</td><td>400 m</td><td>90,6</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            CotacaoCart.renderWidget({
+                nome: 'Torcida PE Branca UV',
+                categoria: 'Torcida Branca',
+                sku: 'TBR-UV',
+                embalagem: 'Rolo',
+                bitolas: ['02 mm', '03 mm', '04 mm'],
+                cores: ['Branca']
+            });
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -38,25 +38,35 @@
 .breadcrumb--light {
     position: absolute;
     top: -40px;
-    left: 24px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    padding: 6px 16px;
-    border-radius: 20px;
+    left: 2px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    padding: 8px 22px;
+    border-radius: 24px;
     font-size: 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .breadcrumb--light a,
 .breadcrumb--light .breadcrumb__sep,
 .breadcrumb--light .current {
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 .breadcrumb--light a:hover {
     color: #fff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+}
+
+.breadcrumb--light:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Breadcrumb invisível no grid flow (é absoluto no topo) */
@@ -66,23 +76,7 @@
 }
 
 .produto-hero__tag {
-    grid-column: 1;
-    grid-row: 2;
-    display: inline-flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 8px 20px;
-    border-radius: 40px;
-    margin: 0 0 20px;
-    width: fit-content;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
 .produto-hero__title {
@@ -226,70 +220,137 @@
 
 /* ── Imagem e specs ────────────────────────── */
 .produto-img-wrap {
-    background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 32px;
-    margin-bottom: 24px;
-    min-height: 260px;
+    padding: 40px;
+    margin-bottom: 32px;
+    min-height: 320px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: var(--transition);
+}
+
+.produto-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.02) 100%);
+    pointer-events: none;
 }
 
 .produto-img-wrap img {
-    max-height: 220px;
+    max-height: 260px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
-    transition: transform 0.4s ease;
+    filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.12));
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+.produto-img-wrap:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--cyan);
 }
 
 .produto-img-wrap:hover img {
-    transform: scale(1.05) rotate(-1deg);
+    transform: scale(1.08) translateY(-8px);
 }
 
 .specs-card {
-    background: var(--gray-100);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-md);
-    padding: 28px;
+    background: var(--white);
+    border: 1px solid rgba(200, 200, 200, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+}
+
+.specs-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(200, 200, 200, 0.3);
 }
 
 .specs-card h3 {
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: var(--blue-dark);
-    margin-bottom: 16px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.4;
+}
+
+.specs-card h3::before {
+    content: '';
+    width: 3px;
+    height: 28px;
+    background: var(--cyan);
+    border-radius: 2px;
 }
 
 .specs-table {
     width: 100%;
-    border-collapse: collapse;
-    font-size: 0.875rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(200, 200, 200, 0.15);
 }
 
-.specs-table tr {
-    border-bottom: 1px solid var(--gray-200);
-}
-
-.specs-table tr:last-child {
-    border-bottom: none;
-}
-
-.specs-table th {
-    padding: 10px 0;
-    color: var(--gray-600);
+.specs-table thead th {
+    background: var(--blue-dark);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
     font-weight: 600;
+    padding: 16px 18px;
     text-align: left;
-    width: 40%;
+}
+
+.specs-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.specs-table tbody tr:nth-child(even) {
+    background: rgba(245, 245, 245, 0.5);
+}
+
+.specs-table tbody tr:hover {
+    background: rgba(0, 198, 215, 0.08);
 }
 
 .specs-table td {
-    padding: 10px 0;
-    color: var(--blue-dark);
+    padding: 16px 18px;
+    color: var(--gray-600);
     font-weight: 500;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.15);
+    line-height: 1.6;
+}
+
+.specs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.specs-table td:first-child {
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+/* Responsividade da tabela */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-sm);
 }
 
 /* ── CTA ───────────────────────────────────── */
@@ -378,5 +439,54 @@
         grid-row: auto;
         margin-top: 16px;
         padding-left: 0;
+    }
+}
+
+/* Subproduto layout padrao */
+.subproduto-page .produto-hero {
+    min-height: 360px;
+}
+
+.subproduto-page .produto-hero__desc {
+    max-width: 720px;
+}
+
+.subproduto-page .produto-main {
+    padding: 72px 0 88px;
+}
+
+.subproduto-page .produto-layout {
+    gap: 44px;
+}
+
+.subproduto-page .produto-info p {
+    margin-bottom: 14px;
+}
+
+.subproduto-page .produto-img-wrap {
+    min-height: 300px;
+    padding: 22px;
+}
+
+.subproduto-page .produto-img-wrap img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.subproduto-page .specs-card {
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .subproduto-page .produto-main {
+        padding: 48px 0 64px;
+    }
+
+    .subproduto-page .produto-layout {
+        gap: 28px;
     }
 }

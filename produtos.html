@@ -53,6 +53,16 @@
         <a href="distribuicao.html" class="products__tab">Distribuição</a>
     </nav>
 
+    <section class="products" style="padding-top:56px;padding-bottom:56px;">
+        <div class="container">
+            <div class="section-header center" style="margin-bottom:24px;">
+                <span class="section-tag">Atualizado Pelo Admin</span>
+                <h2 class="section-title">Produtos Cadastrados</h2>
+            </div>
+            <div id="admin-products-grid" class="products__grid"></div>
+        </div>
+    </section>
+
     <main class="products-page">
         <div class="container">
 
@@ -463,6 +473,47 @@
 
     <script src="app.js"></script>
     <script>
+        async function loadAdminProducts() {
+            const grid = document.getElementById('admin-products-grid');
+            if (!grid) return;
+
+            try {
+                const res = await fetch('/api/products', { cache: 'no-store' });
+                if (!res.ok) throw new Error('Falha ao carregar produtos');
+
+                const products = await res.json();
+                if (!Array.isArray(products) || products.length === 0) {
+                    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--gray-600);">Nenhum produto cadastrado no painel.</p>';
+                    return;
+                }
+
+                grid.innerHTML = products.map((p) => {
+                    const title = p.title || 'Produto Riomar';
+                    const tag = p.tag || 'RIOMAR';
+                    const desc = (p.description || 'Sem descricao cadastrada.').slice(0, 180);
+                    const img = p.image_url ? ('/' + p.image_url) : 'images/rope_pp.png';
+
+                    return `
+                        <article class="product-card animate-on-scroll">
+                            <div class="product-card__img">
+                                <img src="${img}" alt="${title}" loading="lazy" />
+                                <div class="product-card__overlay">
+                                    <a href="cotacao.html" class="btn btn--sm">Solicitar Cotacao</a>
+                                </div>
+                            </div>
+                            <div class="product-card__body">
+                                <span class="product-card__tag">${tag}</span>
+                                <h3>${title}</h3>
+                                <p>${desc}</p>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+            } catch (err) {
+                grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#c0392b;">Nao foi possivel carregar os produtos do painel.</p>';
+            }
+        }
+
         // Lógica do Sistema de Orçamento (Front-end)
         let quoteItems = [];
 
@@ -628,7 +679,9 @@
             const active = document.querySelector(`#quick-nav a[href="${hash}"]`);
             if (active) active.classList.add('active');
         }
-    </script>
+    
+        loadAdminProducts();
+</script>
 </body>
 
 </html>

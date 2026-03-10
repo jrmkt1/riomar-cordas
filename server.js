@@ -10,7 +10,12 @@ const db = require('./database');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SECRET_KEY = process.env.SECRET_KEY || 'riomar_super_secret_key_123';
+const SECRET_KEY = process.env.SECRET_KEY;
+
+if (!SECRET_KEY) {
+    console.error('ERRO: variável de ambiente SECRET_KEY não configurada.');
+    process.exit(1);
+}
 
 // Middlewares
 app.use(cors());

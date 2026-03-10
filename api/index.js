@@ -9,7 +9,11 @@ const jwt = require('jsonwebtoken');
 const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
-const SECRET_KEY = process.env.SECRET_KEY || 'riomar_super_secret_key_123';
+const SECRET_KEY = process.env.SECRET_KEY;
+
+if (!SECRET_KEY) {
+    throw new Error('SECRET_KEY não configurada no ambiente.');
+}
 
 app.use(cors());
 app.use(express.json());

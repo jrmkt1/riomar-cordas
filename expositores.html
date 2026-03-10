@@ -168,8 +168,13 @@
                 const res = await fetch('/api/products');
                 if (res.ok) {
                     const products = await res.json();
-                    // Procura pelo produto de ID 1 no banco de dados
-                    const prod = products.find(p => p.id === 1);
+                    const normalize = (v) => (v || '')
+                        .toString()
+                        .normalize('NFD')
+                        .replace(/[\u0300-\u036f]/g, '')
+                        .toLowerCase();
+                    const pageKey = 'expositores';
+                    const prod = products.find(p => normalize(p.title).includes(pageKey)) || products[0];
                     if (prod) {
                         if (prod.title) document.querySelector('.section-title').textContent = prod.title;
                         if (prod.description) document.querySelector('.produto-info p:nth-of-type(2)').textContent = prod.description;

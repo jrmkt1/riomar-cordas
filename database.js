@@ -69,15 +69,20 @@ function initDB() {
         )`);
 
         // Criar usuário admin padrão caso não exista (credenciais via .env)
-        const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'riomar_admin';
-        const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Riomar@2024';
+        const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+        const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+        if (!ADMIN_USERNAME || !ADMIN_PASSWORD) {
+            console.warn('ADMIN_USERNAME/ADMIN_PASSWORD nao configurados; criacao automatica de admin desativada.');
+            return;
+        }
 
         db.get("SELECT id FROM users WHERE username = ?", [ADMIN_USERNAME], (err, row) => {
             if (!row) {
                 const salt = bcrypt.genSaltSync(10);
                 const hash = bcrypt.hashSync(ADMIN_PASSWORD, salt);
                 db.run("INSERT INTO users (username, password) VALUES (?, ?)", [ADMIN_USERNAME, hash]);
-                console.log(`✅ Usuário admin criado: ${ADMIN_USERNAME}`);
+                console.log(`Admin inicial criado: ${ADMIN_USERNAME}`);
             }
         });
     });
