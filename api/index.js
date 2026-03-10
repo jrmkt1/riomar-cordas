@@ -1,12 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
-// Em serverless, SQLite funciona apenas para leitura do banco bundled
-// Para escrita persistente, migrar para um banco na nuvem (Turso, Neon, etc.)
-const sqlite3 = require('sqlite3').verbose();
+const initSqlJs = require('sql.js/dist/sql-asm.js');
 
 const app = express();
 const SECRET_KEY = process.env.SECRET_KEY;
@@ -19,14 +17,41 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Banco SQLite (read-only em serverless, mas funcional para consultas)
 const dbPath = path.resolve(__dirname, '..', 'database.sqlite');
-let db;
-try {
-    db = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY);
-} catch (e) {
-    // Fallback: tenta abrir em /tmp se bundled não funcionar
-    db = new sqlite3.Database('/tmp/database.sqlite');
+let dbPromise;
+
+function normalizeParams(params) {
+    return params.map((value) => (value === undefined ? null : value));
+}
+
+async function getDb() {
+    if (!dbPromise) {
+        dbPromise = initSqlJs().then((SQL) => {
+            const buffer = fs.readFileSync(dbPath);
+            return new SQL.Database(buffer);
+        });
+    }
+
+    return dbPromise;
+}
+
+async function queryAll(sql, params = []) {
+    const db = await getDb();
+    const statement = db.prepare(sql);
+    const rows = [];
+
+    statement.bind(normalizeParams(params));
+    while (statement.step()) {
+        rows.push(statement.getAsObject());
+    }
+
+    statement.free();
+    return rows;
+}
+
+async function queryOne(sql, params = []) {
+    const rows = await queryAll(sql, params);
+    return rows[0] || null;
 }
 
 // Middleware de autenticação
@@ -42,46 +67,59 @@ function requireAuth(req, res, next) {
 }
 
 // --- AUTH ---
-app.post('/api/login', (req, res) => {
-    const { username, password } = req.body;
-    db.get("SELECT * FROM users WHERE username = ?", [username], (err, user) => {
-        if (err || !user) return res.status(401).json({ error: 'Usuário não encontrado' });
+app.post('/api/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const user = await queryOne("SELECT * FROM users WHERE username = ?", [username]);
+        if (!user) return res.status(401).json({ error: 'Usuário não encontrado' });
+
         const isValid = bcrypt.compareSync(password, user.password);
         if (!isValid) return res.status(401).json({ error: 'Senha incorreta' });
+
         const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: '24h' });
         res.json({ token, username });
-    });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 // --- REPRESENTANTES ---
-app.get('/api/representatives', (req, res) => {
-    db.all("SELECT * FROM representatives ORDER BY region, name", [], (err, rows) => {
-        if (err) return res.status(500).json({ error: err.message });
+app.get('/api/representatives', async (req, res) => {
+    try {
+        const rows = await queryAll("SELECT * FROM representatives ORDER BY region, name");
         res.json(rows);
-    });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 // --- PRODUTOS ---
-app.get('/api/products', (req, res) => {
-    db.all("SELECT * FROM products ORDER BY id DESC", [], (err, rows) => {
-        if (err) return res.status(500).json({ error: err.message });
+app.get('/api/products', async (req, res) => {
+    try {
+        const rows = await queryAll("SELECT * FROM products ORDER BY id DESC");
         res.json(rows);
-    });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 // --- ORÇAMENTOS (leitura) ---
-app.get('/api/quotes', requireAuth, (req, res) => {
-    db.all("SELECT * FROM quotes ORDER BY created_at DESC", [], (err, rows) => {
-        if (err) return res.status(500).json({ error: err.message });
+app.get('/api/quotes', requireAuth, async (req, res) => {
+    try {
+        const rows = await queryAll("SELECT * FROM quotes ORDER BY created_at DESC");
         res.json(rows);
-    });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
-app.get('/api/cotacoes', requireAuth, (req, res) => {
-    db.all("SELECT * FROM quotes ORDER BY created_at DESC", [], (err, rows) => {
-        if (err) return res.status(500).json({ error: err.message });
+app.get('/api/cotacoes', requireAuth, async (req, res) => {
+    try {
+        const rows = await queryAll("SELECT * FROM quotes ORDER BY created_at DESC");
         res.json(rows);
-    });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 // --- COTAÇÃO (envio) ---
